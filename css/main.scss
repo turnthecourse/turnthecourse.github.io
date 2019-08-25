@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400&display=swap');
+//@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
 
 body, html {
@@ -70,7 +70,6 @@ section.TTC {
     padding-top: 15em;
     padding-bottom: 15em; 
     text-align: center;
-    width: 100%;
     
     h1 {
         color: white;
@@ -108,8 +107,8 @@ section.TTC {
 
         }
     }
-
-    /*section.TTC {
+    /*
+    section.TTC {
         //font-size: 1.5rem;
         background: url('../img/ttc.jpg');
         background-size: cover;
@@ -130,8 +129,8 @@ section.TTC {
             margin-bottom: 0;
             text-align: center;
         }
-    }*/
-
+    }
+    */
     section.Video {
         font-size: .9rem;
         line-height: 1.6em;
@@ -233,7 +232,8 @@ footer {
     }
 }
 
-//min-width 768
+
+// Desktop screens (min-width 768)
 @media only screen and (min-width: 800px) {
     html {
         font-size: 18px;
@@ -267,8 +267,22 @@ footer {
     }
 }
 
-
+// Mobile screens
 @media only screen and (max-width: 800px) {
+    header {
+        font-size: 14px;
+    }
+
+    section.TTC {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    section.contact {
+        background-position: center center;
+    }
+
     .video-container {
         position: relative;
         padding-bottom: 56.25%;

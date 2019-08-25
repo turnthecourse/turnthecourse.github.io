@@ -1,0 +1,288 @@
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
+
+body, html {
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    //font-family: 'Merriweather';
+    font-family: 'Playfair Display';
+    background: black;
+    //display: none;
+}
+
+header {
+    position: absolute;
+    padding: 1em;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 2em);
+    background: #111;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    a.logo {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+    }
+
+    nav ul{
+        list-style-type: none;
+        display: flex; 
+        justify-content: space-around;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        li a {
+            padding: 1em;
+        }
+    }
+}
+
+section {
+    background: black;
+}
+
+section.Video, section.Music, section.Shop {
+    //margin-left: auto;
+    //margin-right: auto;
+    text-align: center;
+
+    h2 {
+        letter-spacing: 0.2rem;
+    }
+    
+}
+
+section.TTC {
+    //font-size: 1.5rem;
+    background: url('../img/ttc.jpg');
+    background-size: cover;
+    padding-top: 15em;
+    padding-bottom: 15em; 
+    text-align: center;
+    
+    h1 {
+        color: white;
+        letter-spacing: 0.5rem;
+        padding-top: 5em;
+        font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.8rem;
+    }
+
+    p {
+        color: white;
+        width: 70%;
+        font-size: 1.2rem;
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+
+    section {
+        padding: 3em;
+
+        h1, h2 {
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+
+        }
+    }
+
+    /*section.TTC {
+        //font-size: 1.5rem;
+        background: url('../img/ttc.jpg');
+        background-size: cover;
+        padding-top: 10em;
+        padding-bottom: 10em; 
+        text-align: center;
+        
+        h1 {
+            color: white;
+            letter-spacing: 0.5rem;
+            padding-top: 5em;
+        }
+
+        p {
+            color: white;
+            width: 70%;
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            text-align: center;
+        }
+    }*/
+
+    section.Video {
+        font-size: .9rem;
+        line-height: 1.6em;
+        color: white;
+        background: black;
+        
+        h2 {
+            padding-bottom: 1em;
+        }
+
+        
+    }
+
+    section.Music {
+        color: white;
+        background: black;
+
+        .logo-link img {
+            width: 150px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .logo-link {
+            display: inline-block;
+        }
+    }
+
+    section.Shop {
+        color: white;
+        background: black;
+       
+
+        .shop_button {
+            color: white;
+            margin-top: 1em;
+            display: block;
+            background-position: 0 .3em;
+        }
+    }
+}
+
+section.describtion, section.Impressum, section.Datenschutz, section.contact {
+    padding: 3em;
+    color: white;
+    
+    h1, h2 {
+        text-transform: uppercase;
+        //margin: 0;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+        letter-spacing: 0.2rem;
+
+    }
+
+    .shop_button {
+        color: white;
+        margin-top: 1em;
+        display: block;
+        background-position: 0 .3em;
+        text-decoration: none;
+    }
+}
+
+section.contact {
+    background: url('../img/felix2.jpg');
+    background-size: cover;
+    padding-top: 5em;
+    padding-bottom: 5em;
+
+    h3 {
+        letter-spacing: 0.1rem;
+    }
+}
+
+footer {
+    text-align: center;
+    background: #111;
+    padding: 30px;
+    display: block;
+
+    a {
+        color: #989596;
+        font-size: 40px;
+        margin: 0 15px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+}
+
+@media only screen and (min-width: 600px) {
+    section.TTC {
+        h1 {
+            font-size: 2.1rem;
+        }
+    }
+}
+
+//min-width 768
+@media only screen and (min-width: 800px) {
+    html {
+        font-size: 18px;
+    }
+
+    section.TTC {
+        padding-top: 10em;
+        padding-bottom: 10em;
+
+        h1 {
+            font-size: 3.5rem;
+            padding-top: 8em;letter-spacing: 1.5rem;
+        }
+
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    section.Video, section.Music {
+        // center section
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    section.contact {
+        padding-top: 17em;
+        padding-bottom: 17em;
+    }
+}
+
+
+@media only screen and (max-width: 800px) {
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .video-container iframe,
+    .video-container object,
+    .video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

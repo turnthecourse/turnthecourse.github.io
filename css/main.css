@@ -260,9 +260,10 @@ footer a {
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
-  section.contact {
-    background-position: center center;
-  }
+  /*section.contact {
+        background-position: center center;
+    }
+    */
   .video-container {
     position: relative;
     padding-bottom: 56.25%;

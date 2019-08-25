@@ -269,16 +269,16 @@ footer {
 
 // Mobile screens
 @media only screen and (max-width: 800px) {
-/*   header {
-        font-size: 12px;
+   header {
+        font-size: 14px;
 
         a.logo {
             letter-spacing: 0.0rem;
         }
     }
-*/
+
     section.TTC {
-        padding-top: 6em;
+        padding-top: 13em;
         background-position: center;
     }
     
@@ -301,37 +301,14 @@ footer {
     }
 }
 
-
-// Mobile screens
+// Small mobile screens
 @media only screen and (max-width: 400px) {
     header {
         font-size: 12px;
-
-        a.logo {
-            letter-spacing: 0.0rem;
-        }
     }
 
     section.TTC {
         padding-top: 6em;
         background-position: center;
-    }
-    
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 30px;
-        height: 0;
-        overflow: hidden;
-    }
-    
-    .video-container iframe,
-    .video-container object,
-    .video-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
     }
 }

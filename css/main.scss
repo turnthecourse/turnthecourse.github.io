@@ -134,6 +134,10 @@ section.TTC {
     section.Shop {
         color: white;
         background: black;
+
+        a {
+            text-decoration: none;
+        }
        
 
         .shop_button {
@@ -159,6 +163,10 @@ section.Members {
         font-size: 1.4rem;
         letter-spacing: 0.2rem;
 
+    }
+
+    a {
+        text-decoration: none;
     }
 
     .shop_button {

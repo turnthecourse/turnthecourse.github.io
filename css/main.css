@@ -139,6 +139,10 @@ section.TTC p {
   background: black;
 }
 
+.wrapper section.Shop a {
+  text-decoration: none;
+}
+
 .wrapper section.Shop .shop_button {
   color: white;
   margin-top: 1em;
@@ -162,6 +166,11 @@ section.describtion h2, section.Impressum h2, section.Datenschutz h2, section.co
 section.Members h2 {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
+}
+
+section.describtion a, section.Impressum a, section.Datenschutz a, section.contact a,
+section.Members a {
+  text-decoration: none;
 }
 
 section.describtion .shop_button, section.Impressum .shop_button, section.Datenschutz .shop_button, section.contact .shop_button,

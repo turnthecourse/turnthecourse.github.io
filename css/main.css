@@ -253,14 +253,11 @@ footer a {
 
 @media only screen and (max-width: 800px) {
   header {
-    font-size: 14px;
+    font-size: 12px;
   }
-  /*
-    section.TTC {
-        background-position: center center;
-        background-size: contain;
-    }
-    */
+  header a.logo {
+    letter-spacing: 0.0rem;
+  }
   .video-container {
     position: relative;
     padding-bottom: 56.25%;

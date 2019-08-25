@@ -93,30 +93,6 @@ section.TTC p {
   display: grid;
   -ms-grid-columns: auto;
       grid-template-columns: auto;
-  /*
-    section.TTC {
-        //font-size: 1.5rem;
-        background: url('../img/ttc.jpg');
-        background-size: cover;
-        padding-top: 10em;
-        padding-bottom: 10em; 
-        text-align: center;
-        
-        h1 {
-            color: white;
-            letter-spacing: 0.5rem;
-            padding-top: 5em;
-        }
-
-        p {
-            color: white;
-            width: 70%;
-            font-size: 1.2rem;
-            margin-bottom: 0;
-            text-align: center;
-        }
-    }
-    */
 }
 
 .wrapper section {

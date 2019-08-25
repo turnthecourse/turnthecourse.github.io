@@ -145,7 +145,8 @@ section.TTC {
     }
 }
 
-section.describtion, section.Impressum, section.Datenschutz, section.contact {
+section.describtion, section.Impressum, section.Datenschutz, section.contact,
+section.Members {
     padding: 3em;
     color: white;
     
@@ -250,6 +251,10 @@ footer {
 
     section.TTC {
         padding-top: 13em;
+        background-position: center;
+    }
+
+    section.contact {
         background-position: center;
     }
     

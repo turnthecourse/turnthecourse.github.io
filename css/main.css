@@ -146,21 +146,26 @@ section.TTC p {
   background-position: 0 .3em;
 }
 
-section.describtion, section.Impressum, section.Datenschutz, section.contact {
+section.describtion, section.Impressum, section.Datenschutz, section.contact,
+section.Members {
   padding: 3em;
   color: white;
 }
 
-section.describtion h1, section.describtion h2, section.Impressum h1, section.Impressum h2, section.Datenschutz h1, section.Datenschutz h2, section.contact h1, section.contact h2 {
+section.describtion h1, section.describtion h2, section.Impressum h1, section.Impressum h2, section.Datenschutz h1, section.Datenschutz h2, section.contact h1, section.contact h2,
+section.Members h1,
+section.Members h2 {
   text-transform: uppercase;
 }
 
-section.describtion h2, section.Impressum h2, section.Datenschutz h2, section.contact h2 {
+section.describtion h2, section.Impressum h2, section.Datenschutz h2, section.contact h2,
+section.Members h2 {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
 }
 
-section.describtion .shop_button, section.Impressum .shop_button, section.Datenschutz .shop_button, section.contact .shop_button {
+section.describtion .shop_button, section.Impressum .shop_button, section.Datenschutz .shop_button, section.contact .shop_button,
+section.Members .shop_button {
   color: white;
   margin-top: 1em;
   display: block;
@@ -236,6 +241,9 @@ footer a {
   }
   section.TTC {
     padding-top: 13em;
+    background-position: center;
+  }
+  section.contact {
     background-position: center;
   }
   .video-container {

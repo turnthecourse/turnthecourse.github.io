@@ -258,6 +258,9 @@ footer a {
   header a.logo {
     letter-spacing: 0.0rem;
   }
+  section.TTC {
+    background-position: auto;
+  }
   .video-container {
     position: relative;
     padding-bottom: 56.25%;

@@ -63,7 +63,7 @@ section.Video h2, section.Music h2, section.Shop h2 {
 }
 
 section.TTC {
-  background: url("../img/ttc_3.jpg");
+  background: url("../img/ttc-min.jpg");
   background-size: cover;
   padding-top: 15em;
   padding-bottom: 15em;
@@ -183,7 +183,7 @@ section.Members .shop_button {
 }
 
 section.contact {
-  background: url("../img/felix2.jpg");
+  background: url("../img/felix2-min.jpg");
   background-size: cover;
   padding-top: 5em;
   padding-bottom: 5em;

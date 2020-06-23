@@ -87,7 +87,7 @@ section.TTC p {
   text-align: center;
 }
 
-section.wrapper_body {
+.wrapper_body {
   background: url("../img/grey_skies_full_min.jpg");
   background-size: cover;
   padding-top: 5em;
@@ -223,11 +223,11 @@ footer a {
   }
   section.TTC {
     padding-top: 10em;
-    padding-bottom: 10em;
+    padding-bottom: 17em;
   }
   section.TTC h1 {
-    font-size: 3.5rem;
-    padding-top: 8em;
+    font-size: 4.5rem;
+    padding-top: 6em;
     letter-spacing: 1.5rem;
   }
   h2 {

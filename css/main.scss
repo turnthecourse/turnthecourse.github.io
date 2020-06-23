@@ -45,11 +45,11 @@ header {
     }
 }
 
-section {
+/*section {
     background: black;
-}
+}*/
 
-section.Video, section.Music, section.Shop {
+section.Video, section.News, section.Music, section.Shop {
     //margin-left: auto;
     //margin-right: auto;
     text-align: center;
@@ -87,10 +87,17 @@ section.TTC {
     }
 }
 
+section.wrapper_body {
+    background: url('../img/grey_skies_full_min.jpg');
+    background-size: cover;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: auto;
-
+    
     section {
         padding: 3em;
 
@@ -101,15 +108,14 @@ section.TTC {
 
         h2 {
             font-size: 1.4rem;
-
         }
     }
     
-    section.Video {
+    section.Video, section.News {
         font-size: .9rem;
         line-height: 1.6em;
         color: white;
-        background: black;
+        //background: black;
         
         h2 {
             padding-bottom: 1em;
@@ -118,7 +124,7 @@ section.TTC {
 
     section.Music {
         color: white;
-        background: black;
+        //background: black;
 
         .logo-link img {
             width: 150px;
@@ -133,7 +139,7 @@ section.TTC {
 
     section.Shop {
         color: white;
-        background: black;
+        //background: black;
 
         a {
             text-decoration: none;
@@ -234,7 +240,7 @@ footer {
         font-size: 1.7rem;
     }
 
-    section.Video, section.Music {
+    section.Video, section.News, section.Music {
         // center section
         margin-left: auto;
         margin-right: auto;

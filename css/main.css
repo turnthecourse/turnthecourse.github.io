@@ -110,6 +110,10 @@ section.TTC p {
   margin: 0;
 }
 
+.wrapper section h1 {
+  font-size: 2.0rem;
+}
+
 .wrapper section h2 {
   font-size: 1.4rem;
 }
@@ -120,7 +124,7 @@ section.TTC p {
   color: white;
 }
 
-.wrapper section.Video h2, .wrapper section.News h2 {
+.wrapper section.Video h1, .wrapper section.Video h2, .wrapper section.News h1, .wrapper section.News h2 {
   padding-bottom: 1em;
 }
 

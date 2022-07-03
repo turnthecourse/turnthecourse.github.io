@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Turn The Course</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- External styles and fonts -->
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
     <!-- Include the differnt favicon types -->
     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
@@ -26,119 +30,368 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Playfair Display", "Lato", sans-serif;}
+        body, html {
+          height: 100%;
+          color: "withe";
+          line-height: 1.8;
+        }
+
+        footer {
+            text-align: center;
+            background: #111;
+            padding: 30px;
+            display: block;
+        }
+
+        .ttc-footer {
+            color: #989596;
+            font-size: 40px;
+            margin: 0 15px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .band-name {
+            color: white;
+            letter-spacing: 0.5rem;
+            padding-top: 5em;
+            font-family: 'Playfair Display';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 1.8rem;
+        }
+
+        .logo-link img {
+            width: 150px;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .logo-link {
+            display: inline-block;
+        }
+        
+        /* Create a Parallax Effect */
+        .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        
+        /* First image (Logo. Full height) */
+        .bgimg-1 {
+            background-image: url("img/ttc-band-2022-min.JPG");
+            min-height: 100%;
+        }
+        
+        /* Second image (Portfolio) */
+        .bgimg-2 {
+             background-image: url("img/i-felt-you-here-min.jpg");
+            min-height: 400px;
+        }
+
+        /* Third image (Merch) */
+        .bgimg-3 {
+            background-image: url("img/grey_skies_full_min.jpg");
+            min-height: 400px;
+        }
+        
+        /* Forth image (Contact) */
+        .bgimg-4 {
+            background-image: url("img/felix2-min.jpg");
+            min-height: 400px;
+        }
+        
+        .w3-wide {letter-spacing: 10px;}
+        .w3-hover-opacity {cursor: pointer;}
+        
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1600px) {
+            .bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+                background-attachment: scroll;
+                min-height: 400px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Navbar (sit on top) -->
+    <div class="w3-top">
+      <div class="w3-bar" id="myNavbar">
+        <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="#home" class="w3-bar-item w3-button">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+        <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-music"></i> MUSIC</a>
+        <a href="#merch" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-tshirt"></i> MERCH</a>
+        <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+        <a href="tour.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-shuttle-van"></i> TOUR</a>
+        <a href="impressum.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-info"></i> IMPRINT</a>
+        <a href="datenschutz.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-lock"></i> PRIVACY POLICY</a>
+      </div>
     
-    <header>
-        <a href="index.html" class=logo>Turn The Course</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main body -->
-    <div class="wrapper">
-
-        <!-- Welcome band photo -->
-        <section class="TTC">
-            <div class="inner">
-                <h1>TURN THE COURSE</h1>
+      <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+        <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">MUSIC</a>
+        <a href="#merch" class="w3-bar-item w3-button" onclick="toggleFunction()">MERCH</a>
+        <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+        <a href="tour.html" class="w3-bar-item w3-button" onclick="toggleFunction()">TOUR</a>
+        <a href="impressum.html" class="w3-bar-item w3-button" onclick="toggleFunction()">IMPRINT</a>
+        <a href="datenschutz.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PRIVACY POLICY</a>
+      </div>
+    </div>
     
-            </div>
-        </section>  
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-large w3-black w3-jumbo w3-wide w3-animate-opacity w3-hide-small">TURN THE COURSE</span>
+            <span class="w3-center w3-padding-large w3-black w3-large w3-wide w3-animate-opacity w3-hide-medium w3-hide-large">TURN THE COURSE</span>
+        </div>
+        <!--div class="band-name w3-display-middle">
+            <h1>TURN THE COURSE</h1>
+        </div-->
+    </div>
+    
+    <!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
 
-        <div class="wrapper_body">
-            <!-- News -->
-            <!-- YouTube embbeded music video -->
+        <h3 class="w3-center">LATEST RELEASE</h3>
+        <div class="w3-center video-container">
+            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/aPFOVSDWhs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
-            <!--
-            <section class="News">
-                <h1>GREY SKIES EP OUT NOW</h1>
-            </section>
-            -->
+        <h3 class="w3-center">ABOUT</h3>
+        <!--p class="w3-center"><em>What is behind TURN THE COURSE?</em></p-->
+            <p>
+                TURN THE COURSE is a post-metalcore band from Schweinfurt (Bavaria, Germany) formed in September 2014. Their style is a new approach to modern heavy music. The combination of aggressive and melodic parts creates a unique and captivating atmosphere of modern metalcore. This sound is rounded off by the technical finesse of the instrumental group. With their debut EP "NO ONE CAN SAVE US" (2018), the band showed their raw, unleashed power. In 2020 they formed a team with David "Dave" Beule (Ex-Vitja) and Pitchback-Studios (Electric Callboy, Nasty, Any Given Day) and produced the follow-up EP "GREY SKIES" (2020), which is now a symbiosis between aggressive metalcore, breathtaking soundscapes, true emotions, technical sophistication, and dynamic musicality. The next release is planned for autumn 2022. 
 
-            <section class="Video">
-                
-                <h2>MUSIC VIDEO: THE SICKNESS feat. DAVID BEULE</h2>
+                TURN THE COURSE have already proven at numerous live shows that they can tear everything with them. In addition to tours through Germany, shows with Walking Dead On Broadway were also on the agenda.
+            </p>
 
-                <div class="video-wrapper">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/aPFOVSDWhs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+        <h3 class="w3-center">TURN THE COURSE</h3>
+        <p class="w3-center">
+            <em>Vocals</em> - Felix Scheider,
+            <em>Guitars/Synths</em> - Joshua Simon,
+            <em>Guitars</em> - Dominik Kimmel,
+            <em>Drums</em> - Noah Ries,
+            <em>Bass</em> - Dieter Simon</p>
+    </div>
+    
+    
+    
+    <!-- Second Parallax Image with Portfolio Text -->
+    <div class="bgimg-2 w3-display-container">
+      <div class="w3-display-middle">
+        <span class="w3-xxlarge w3-text-white w3-wide">MUSIC</span>
+      </div>
+    </div>
+    
+    <!-- Container (Portfolio Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="portfolio">
 
-            </section>
+        <section class="Music">
+            <h3 class="w3-center">STREAMING</h3>
 
-            <section class="Video">
-                <h2>VISUALIZER: HOPE</h2>
-
-                <div class="video-wrapper">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/uW9vPWcCtWw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-            </section>
-
-            
-
-            <!-- Music -->
-            <section class="Music">
-                <h2>Stream Music</h2>
-                
+            <div class="w3-center">
                 <!-- Spotify -->
                 <a href="https://open.spotify.com/artist/4VgNJfOR0uNNQFQtrJ0ZFm" class="logo-link" target="_blank">
-                    <!--img src="https://www.architectsofficial.com/wp-content/themes/architects/assets/spotify.png"-->
-                    <img src= "img/spotify.png" class="logo-link">
+                    <img src= "img/spotify-blk.png" class="logo-link">
                 </a>
                 
                 <!-- Apple Music -->
                 <a href="https://music.apple.com/de/artist/turn-the-course/1369471894" class="logo-link" target="_blank">
-                    <!---img src="https://www.architectsofficial.com/wp-content/themes/architects/assets/apple-music.png"-->
-                    <img src= "img/apple-music.png" class="logo-link">
+                    <img src= "img/apple-music-blk.png" class="logo-link">
                 </a>
 
                 <!-- Deezer -->
                 <a href="https://www.deezer.com/de/album/161596532" class="logo-link" target="_blank">
-                    <!-- img src="https://www.architectsofficial.com/wp-content/themes/architects/assets/deezer.png"-->
-                    <img src= "img/deezer.png" class="logo-link">
+                    <img src= "img/deezer-blk.png" class="logo-link">
                 </a>
 
+                <!-- Tidal -->
+                <a href="https://tidal.com/browse/artist/9712964" class="logo-link" target="_blank">
+                    <img src="img/Tidal_(service)_logo.svg" class="logo-link">
+                </a>
+            </div>
+    
+        </section>
+
+
+        <h3 class="w3-center">VIDEOS</h3>
+        
+        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <div class="w3-row-padding w3-center">
+
+            <section class="Video">
+
+                <!-- The Sickness Video -->
+                <!--div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/aPFOVSDWhs8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div-->
+        
+                <!-- Hope Video -->
+                <div class="w3-center video-container">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/uW9vPWcCtWw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Spacer -->
+                <p></p>
+
+                <!-- Rotten Video -->
+                <div class="w3-center video-container">
+                    <iframe class="responsive-iframe" src="https://www.youtube.com/embed/wc-Rsklq1xQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
             </section>
-
-            <!-- Merch Store -->
-            <section class="Shop">
-                <h2>Merch Store</h2>
-
-                <a href="https://turnthecourse.bigcartel.com/" target="_blank">
-                    <i class="shop_button">Visit Shop</i>
-                </a> 
-
-            </section>
+        
         </div>
-
+    </div>
+    
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+      <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+      <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+        <img id="img01" class="w3-image">
+        <p id="caption" class="w3-opacity w3-large"></p>
+      </div>
     </div>
 
-    <!-- Footer with socials -->
-    <footer>
-            <a href="https://www.facebook.com/turnthecourse" target="_blank">
-                <i class="fa fa-facebook" aria-hidden="true">
-                </i>
-            </a>
-            <a href="https://www.instagram.com/turnthecourse" target="_blank">
-                <i class="fa fa-instagram" aria-hidden="true">
-                </i>
-            </a>
-            <a href="https://www.youtube.com/channel/UCLvpX2XACxYFVTttEevyYqg" target="_blank">
-                <i class="fa fa-youtube" aria-hidden="true">
-                </i>
-            </a>
-    </footer>
+    <!-- Third Parallax Image with Portfolio Text -->
+    <div class="bgimg-3 w3-display-container">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-white w3-wide">MERCH</span>
+        </div>
+    </div>
 
+    <div class="w3-content w3-container w3-padding-64" id="merch">
+
+        <h3 class="w3-center">STORE</h3>
+        
+        <div class="w3-center">
+            <p>
+                Our shop is hosted via BigCartel. Just click the button to go shopping!
+            </p>
+
+            <form action="https://turnthecourse.bigcartel.com/" method="get" target="_blank">
+                <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">VISIT SHOP </button>
+            </form>
+        </div>
+        
+    </div>
+    
+    <!-- Forth Parallax Image with Portfolio Text -->
+    <div class="bgimg-4 w3-display-container">
+      <div class="w3-display-middle">
+         <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+      </div>
+    </div>
+    
+    <!-- Container (Contact Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="contact">
+      <h3 class="w3-center">You want to know something? Book us?</h3>
+      <p class="w3-center"><em>Get in touch with us!</em></p>
+    
+      <div class="w3-row w3-padding-32 w3-section">
+        <div class="w3-col m8 w3-panel">
+          <div class="w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Schweinfurt, Germany<br>
+            <!--i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br-->
+            <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: turnthecourse@hotmail.com<br>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="w3-center w3-padding-64">
+
+      <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+
+      <div class="w3-xlarge w3-section">
+        <a class="ttc-footer" href="https://www.facebook.com/turnthecourse" target="_blank">
+            <i class="fab fa-facebook" aria-hidden="true">
+            </i>
+        </a>
+
+        <a class="ttc-footer" href="https://www.instagram.com/turnthecourse" target="_blank">
+            <i class="fab fa-instagram" aria-hidden="true">
+            </i>
+        </a>
+
+        <a class="ttc-footer" href="https://www.youtube.com/channel/UCLvpX2XACxYFVTttEevyYqg" target="_blank">
+            <i class="fab fa-youtube" aria-hidden="true">
+            </i>
+        </a>
+
+        <a class="ttc-footer" href="https://www.tiktok.com/@turnthecourse" target="_blank">
+            <i class="fab fa-tiktok" aria-hidden="true">
+            </i>
+        </a>
+        <!--i class="fa fa-snapchat w3-hover-opacity"></i-->
+        <!--i class="fa fa-pinterest-p w3-hover-opacity"></i-->
+        <!--i class="fa fa-twitter w3-hover-opacity"></i-->
+        <!--i class="fa fa-linkedin w3-hover-opacity"></i-->
+      </div>
+      <!--p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p-->
+    </footer>
+     
+    <script>
+    // Modal Image Gallery
+    function onClick(element) {
+      document.getElementById("img01").src = element.src;
+      document.getElementById("modal01").style.display = "block";
+      var captionText = document.getElementById("caption");
+      captionText.innerHTML = element.alt;
+    }
+    
+    // Change style of navbar on scroll
+    window.onscroll = function() {myFunction()};
+    function myFunction() {
+        var navbar = document.getElementById("myNavbar");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        } else {
+            navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        }
+    }
+    
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+            x.className += " w3-show";
+        } else {
+            x.className = x.className.replace(" w3-show", "");
+        }
+    }
+    </script>
+    
 </body>
+
 </html>

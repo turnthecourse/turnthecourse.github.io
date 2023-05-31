@@ -5,7 +5,7 @@ body, html {
 
 body {
   height: 100%;
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
   background: black;
 }
 
@@ -13,39 +13,28 @@ header {
   position: absolute;
   padding: 1em;
   z-index: 20;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   width: calc(100% - 2em);
   background: #111;
 }
-
 header a {
   text-decoration: none;
   color: white;
 }
-
 header a.logo {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
 }
-
 header nav ul {
   list-style-type: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   width: 100%;
   margin: 0;
   padding: 0;
 }
-
 header nav ul li a {
   padding: 1em;
 }
@@ -56,7 +45,6 @@ header nav ul li a {
 section.Video, section.News, section.Music, section.Shop {
   text-align: center;
 }
-
 section.Video h2, section.News h2, section.Music h2, section.Shop h2 {
   letter-spacing: 0.2rem;
 }
@@ -68,17 +56,15 @@ section.TTC {
   padding-bottom: 15em;
   text-align: center;
 }
-
 section.TTC h1 {
   color: white;
   letter-spacing: 0.5rem;
   padding-top: 5em;
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
   font-style: normal;
   font-weight: normal;
   font-size: 1.8rem;
 }
-
 section.TTC p {
   color: white;
   width: 70%;
@@ -95,66 +81,52 @@ section.TTC p {
 }
 
 .wrapper {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
+  grid-template-columns: auto;
 }
-
 .wrapper section {
   padding: 3em;
 }
-
 .wrapper section h1, .wrapper section h2 {
   text-transform: uppercase;
   margin: 0;
 }
-
 .wrapper section h1 {
-  font-size: 2.0rem;
+  font-size: 2rem;
 }
-
 .wrapper section h2 {
   font-size: 1.4rem;
 }
-
 .wrapper section.Video, .wrapper section.News {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.6em;
   color: white;
 }
-
 .wrapper section.Video h1, .wrapper section.Video h2, .wrapper section.News h1, .wrapper section.News h2 {
   padding-bottom: 1em;
 }
-
 .wrapper section.Music {
   color: white;
 }
-
 .wrapper section.Music .logo-link img {
   width: 150px;
   vertical-align: middle;
   text-align: center;
 }
-
 .wrapper section.Music .logo-link {
   display: inline-block;
 }
-
 .wrapper section.Shop {
   color: white;
 }
-
 .wrapper section.Shop a {
   text-decoration: none;
 }
-
 .wrapper section.Shop .shop_button {
   color: white;
   margin-top: 1em;
   display: block;
-  background-position: 0 .3em;
+  background-position: 0 0.3em;
 }
 
 section.describtion, section.Impressum, section.Datenschutz, section.contact,
@@ -162,30 +134,26 @@ section.Members {
   padding: 3em;
   color: white;
 }
-
 section.describtion h1, section.describtion h2, section.Impressum h1, section.Impressum h2, section.Datenschutz h1, section.Datenschutz h2, section.contact h1, section.contact h2,
 section.Members h1,
 section.Members h2 {
   text-transform: uppercase;
 }
-
 section.describtion h2, section.Impressum h2, section.Datenschutz h2, section.contact h2,
 section.Members h2 {
   font-size: 1.4rem;
   letter-spacing: 0.2rem;
 }
-
 section.describtion a, section.Impressum a, section.Datenschutz a, section.contact a,
 section.Members a {
   text-decoration: none;
 }
-
 section.describtion .shop_button, section.Impressum .shop_button, section.Datenschutz .shop_button, section.contact .shop_button,
 section.Members .shop_button {
   color: white;
   margin-top: 1em;
   display: block;
-  background-position: 0 .3em;
+  background-position: 0 0.3em;
   text-decoration: none;
 }
 
@@ -195,7 +163,6 @@ section.contact {
   padding-top: 5em;
   padding-bottom: 5em;
 }
-
 section.contact h3 {
   letter-spacing: 0.1rem;
 }
@@ -206,7 +173,6 @@ footer {
   padding: 30px;
   display: block;
 }
-
 footer a {
   color: #989596;
   font-size: 40px;
@@ -220,7 +186,6 @@ footer a {
     font-size: 2.1rem;
   }
 }
-
 @media only screen and (min-width: 800px) {
   html {
     font-size: 18px;
@@ -247,13 +212,12 @@ footer a {
     padding-bottom: 17em;
   }
 }
-
 @media only screen and (max-width: 800px) {
   header {
     font-size: 14px;
   }
   header a.logo {
-    letter-spacing: 0.0rem;
+    letter-spacing: 0rem;
   }
   section.TTC {
     padding-top: 13em;
@@ -279,7 +243,6 @@ footer a {
     height: 100%;
   }
 }
-
 @media only screen and (max-width: 400px) {
   header {
     font-size: 12px;
@@ -288,5 +251,4 @@ footer a {
     padding-top: 6em;
     background-position: center;
   }
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

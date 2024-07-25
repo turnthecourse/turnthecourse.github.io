@@ -56,14 +56,14 @@
       h4,
       h5,
       h6 {
-        font-family: "Playfair Display", "Lato", sans-serif;
+        font-family: 'Playfair Display', 'Lato', sans-serif;
         font-style: normal;
       }
 
       body,
       html {
         height: 100%;
-        color: "withe";
+        color: 'withe';
         line-height: 1.8;
       }
 
@@ -103,7 +103,7 @@
         color: white;
         letter-spacing: 0.5rem;
         padding-top: 5em;
-        font-family: "Playfair Display";
+        font-family: 'Playfair Display';
         font-style: normal;
         font-weight: normal;
         font-size: 1.8rem;
@@ -132,25 +132,25 @@
 
       /* First image (Logo. Full height) */
       .bgimg-1 {
-        background-image: url("img/TTC-band-horizontal-min.jpg");
+        background-image: url('img/TTC-band-horizontal-min.jpg');
         min-height: 100%;
       }
 
       /* Second image (Portfolio) */
       .bgimg-2 {
-        background-image: url("img/i-felt-you-here-min.jpg");
+        background-image: url('img/i-felt-you-here-min.jpg');
         min-height: 400px;
       }
 
       /* Third image (Merch) */
       .bgimg-3 {
-        background-image: url("img/grey_skies_full_min.jpg");
+        background-image: url('img/grey_skies_full_min.jpg');
         min-height: 400px;
       }
 
       /* Forth image (Contact) */
       .bgimg-4 {
-        background-image: url("img/felix2-min.jpg");
+        background-image: url('img/felix2-min.jpg');
         min-height: 400px;
       }
 
@@ -402,7 +402,6 @@
       <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
       <div class="w3-row-padding w3-center">
         <section class="Video">
-
           <!-- Second Video Video -->
           <div class="w3-center video-container">
             <iframe
@@ -556,39 +555,39 @@
     <script>
       // Modal Image Gallery
       function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
+        document.getElementById('img01').src = element.src
+        document.getElementById('modal01').style.display = 'block'
+        var captionText = document.getElementById('caption')
+        captionText.innerHTML = element.alt
       }
 
       // Change style of navbar on scroll
       window.onscroll = function () {
-        myFunction();
-      };
+        myFunction()
+      }
       function myFunction() {
-        var navbar = document.getElementById("myNavbar");
+        var navbar = document.getElementById('myNavbar')
         if (
           document.body.scrollTop > 100 ||
           document.documentElement.scrollTop > 100
         ) {
           navbar.className =
-            "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            'w3-bar' + ' w3-card' + ' w3-animate-top' + ' w3-white'
         } else {
           navbar.className = navbar.className.replace(
-            " w3-card w3-animate-top w3-white",
-            ""
-          );
+            ' w3-card w3-animate-top w3-white',
+            ''
+          )
         }
       }
 
       // Used to toggle the menu on small screens when clicking on the menu button
       function toggleFunction() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") == -1) {
-          x.className += " w3-show";
+        var x = document.getElementById('navDemo')
+        if (x.className.indexOf('w3-show') == -1) {
+          x.className += ' w3-show'
         } else {
-          x.className = x.className.replace(" w3-show", "");
+          x.className = x.className.replace(' w3-show', '')
         }
       }
     </script>

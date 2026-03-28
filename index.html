@@ -144,6 +144,51 @@
         color: var(--text);
       }
 
+      .about-bg .w3-content {
+        background: transparent;
+      }
+
+      /* ── Latest Release section full-bleed background ──────────── */
+      .latest-bg {
+        position: relative;
+      }
+
+      .latest-bg::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('img/Website-BG-2.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: scaleX(-1);
+        z-index: 0;
+      }
+
+      .latest-bg::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(13, 13, 13, 0.82) 0%,
+          rgba(13, 13, 13, 0.7) 50%,
+          rgba(13, 13, 13, 0.88) 100%
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .latest-bg > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .latest-bg .w3-content {
+        background: transparent;
+      }
+
       h3 {
         color: var(--white);
         letter-spacing: 3px;
@@ -168,6 +213,35 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+      }
+
+      /* ── About section full-bleed background ───────────────────── */
+      .about-bg {
+        position: relative;
+        background-image: url('img/Website-BG-2.jpg');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .about-bg::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(13, 13, 13, 0.82) 0%,
+          rgba(13, 13, 13, 0.7) 50%,
+          rgba(13, 13, 13, 0.88) 100%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .about-bg > * {
+        position: relative;
+        z-index: 1;
       }
 
       .bgimg-1 {
@@ -673,27 +747,30 @@
     </div>
 
     <!-- Latest Release video -->
-    <div class="w3-content w3-container w3-padding-64" id="latest">
-      <h3 class="w3-center">LATEST RELEASE</h3>
-      <div class="w3-center video-container">
-        <iframe
-          class="responsive-iframe"
-          src="https://www.youtube.com/embed/3jzhYRJSUJs?si=Zo2PiOBRuZUNR0Y7"
-          title="YouTube video player"
-          frameborder="0"
-          allow="
-            accelerometer;
-            autoplay;
-            clipboard-write;
-            encrypted-media;
-            gyroscope;
-            picture-in-picture;
-            web-share;
-          "
-          allowfullscreen
-        ></iframe>
+    <div class="latest-bg">
+      <div class="w3-content w3-container w3-padding-64" id="latest">
+        <h3 class="w3-center">LATEST RELEASE</h3>
+        <div class="w3-center video-container">
+          <iframe
+            class="responsive-iframe"
+            src="https://www.youtube.com/embed/3jzhYRJSUJs?si=Zo2PiOBRuZUNR0Y7"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
     </div>
+    <!-- /.latest-bg -->
 
     <!-- Second Parallax Image -->
     <div class="bgimg-2 w3-display-container">
@@ -780,74 +857,78 @@
     </div>
 
     <!-- Container (About Section) -->
-    <div class="w3-content w3-container w3-padding-64" id="about">
-      <h3 class="w3-center">ABOUT</h3>
-      <p>
-        TURN THE COURSE is a post-metalcore band from Schweinfurt (Bavaria,
-        Germany), founded in 2014. Their sound fuses raw aggression with melodic
-        depth and cinematic atmosphere, shaping a modern approach to heavy music
-        that is both powerful and emotionally resonant. With their singles Never
-        Gone and Silhouette released in 2025, TURN THE COURSE opened a new
-        chapter in their journey — heavier, more song-driven, and reflective —
-        while already preparing further singles for 2026. These new tracks mark
-        the latest step in an evolution that began with their debut EP No One
-        Can Save Us (2018), which showcased the band's raw power and
-        uncompromising intensity. In 2020 they joined forces with David "Dave"
-        Beule (Ex-Vitja) and Pitchback Studios (Electric Callboy, Nasty, Any
-        Given Day) to produce their second EP Grey Skies, blending aggressive
-        metalcore with expansive soundscapes, technical precision, and deep
-        emotionality. With the release of I Felt You Here (2024), TURN THE
-        COURSE demonstrated matured songwriting, richer lyrical themes, and a
-        refined balance between heaviness and atmosphere. On stage, TURN THE
-        COURSE are relentless. Their shows are marked by visceral energy,
-        moments of catharsis, and a powerful connection with the audience —
-        whether in small clubs or on festival stages. Having shared the stage
-        with bands such as Ghostkid, TSS, Skywalker, The Oklahoma Kid and more,
-        they continue to prove that their music doesn't just work in the studio
-        — it truly comes alive in front of a crowd.
-      </p>
+    <div class="about-bg">
+      <div class="w3-content w3-container w3-padding-64" id="about">
+        <h3 class="w3-center">ABOUT</h3>
+        <p>
+          TURN THE COURSE is a post-metalcore band from Schweinfurt (Bavaria,
+          Germany), founded in 2014. Their sound fuses raw aggression with
+          melodic depth and cinematic atmosphere, shaping a modern approach to
+          heavy music that is both powerful and emotionally resonant. With their
+          singles Never Gone and Silhouette released in 2025, TURN THE COURSE
+          opened a new chapter in their journey — heavier, more song-driven, and
+          reflective — while already preparing further singles for 2026. These
+          new tracks mark the latest step in an evolution that began with their
+          debut EP No One Can Save Us (2018), which showcased the band's raw
+          power and uncompromising intensity. In 2020 they joined forces with
+          David "Dave" Beule (Ex-Vitja) and Pitchback Studios (Electric Callboy,
+          Nasty, Any Given Day) to produce their second EP Grey Skies, blending
+          aggressive metalcore with expansive soundscapes, technical precision,
+          and deep emotionality. With the release of I Felt You Here (2024),
+          TURN THE COURSE demonstrated matured songwriting, richer lyrical
+          themes, and a refined balance between heaviness and atmosphere. On
+          stage, TURN THE COURSE are relentless. Their shows are marked by
+          visceral energy, moments of catharsis, and a powerful connection with
+          the audience — whether in small clubs or on festival stages. Having
+          shared the stage with bands such as Ghostkid, TSS, Skywalker, The
+          Oklahoma Kid and more, they continue to prove that their music doesn't
+          just work in the studio — it truly comes alive in front of a crowd.
+        </p>
 
-      <h3 class="w3-center" id="members">THE BAND</h3>
-      <div class="member-grid">
-        <div class="member-card">
-          <img src="img/TTC-Felix.jpg" alt="Felix Scheider" />
-          <div class="member-card-info">
-            <p class="member-card-name">Felix Scheider</p>
-            <p class="member-card-role">Vocals</p>
+        <h3 class="w3-center" id="members">THE BAND</h3>
+        <div class="member-grid">
+          <div class="member-card">
+            <img src="img/TTC-Felix.jpg" alt="Felix Scheider" />
+            <div class="member-card-info">
+              <p class="member-card-name">Felix Scheider</p>
+              <p class="member-card-role">Vocals</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <img src="img/TTC-Joshua.jpg" alt="Joshua Simon" />
+            <div class="member-card-info">
+              <p class="member-card-name">Joshua Simon</p>
+              <p class="member-card-role">Guitars &amp; Synths</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <img src="img/TTC-Noah.jpg" alt="Noah Ries" />
+            <div class="member-card-info">
+              <p class="member-card-name">Noah Ries</p>
+              <p class="member-card-role">Drums</p>
+            </div>
+          </div>
+
+          <div class="member-card">
+            <img src="img/TTC-Sven.jpg" alt="Sven Nekula" />
+            <div class="member-card-info">
+              <p class="member-card-name">Sven Nekula</p>
+              <p class="member-card-role">Bass</p>
+            </div>
           </div>
         </div>
 
-        <div class="member-card">
-          <img src="img/TTC-Joshua.jpg" alt="Joshua Simon" />
-          <div class="member-card-info">
-            <p class="member-card-name">Joshua Simon</p>
-            <p class="member-card-role">Guitars &amp; Synths</p>
-          </div>
-        </div>
-
-        <div class="member-card">
-          <img src="img/TTC-Noah.jpg" alt="Noah Ries" />
-          <div class="member-card-info">
-            <p class="member-card-name">Noah Ries</p>
-            <p class="member-card-role">Drums</p>
-          </div>
-        </div>
-
-        <div class="member-card">
-          <img src="img/TTC-Sven.jpg" alt="Sven Nekula" />
-          <div class="member-card-info">
-            <p class="member-card-name">Sven Nekula</p>
-            <p class="member-card-role">Bass</p>
-          </div>
-        </div>
+        <h5 class="w3-center" style="margin-top: 48px">Past Members</h5>
+        <p class="w3-center">
+          <em>Bass</em> - Dieter Simon (2015 - 2026), <em>Guitars</em> - Dominik
+          Kimmel (2018 - 2023), <em>Guitars</em> - Baha Kirlidokme (2014 -
+          2018),
+        </p>
       </div>
-
-      <h5 class="w3-center" style="margin-top: 48px">Past Members</h5>
-      <p class="w3-center">
-        <em>Bass</em> - Dieter Simon (2015 - 2026), <em>Guitars</em> - Dominik
-        Kimmel (2018 - 2023), <em>Guitars</em> - Baha Kirlidokme (2014 - 2018),
-      </p>
     </div>
+    <!-- /.about-bg -->
 
     <!-- Contact Section -->
     <div class="contact-section" id="contact">

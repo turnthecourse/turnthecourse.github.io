@@ -151,19 +151,11 @@
       /* ── Latest Release section full-bleed background ──────────── */
       .latest-bg {
         position: relative;
-      }
-
-      .latest-bg::after {
-        content: '';
-        position: absolute;
-        inset: 0;
         background-image: url('img/Website-BG-2.jpg');
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        transform: scaleX(-1);
-        z-index: 0;
       }
 
       .latest-bg::before {
@@ -177,12 +169,12 @@
           rgba(13, 13, 13, 0.88) 100%
         );
         pointer-events: none;
-        z-index: 1;
+        z-index: 0;
       }
 
       .latest-bg > * {
         position: relative;
-        z-index: 2;
+        z-index: 1;
       }
 
       .latest-bg .w3-content {

@@ -51,21 +51,28 @@
     <style>
       /* ── Colour tokens ─────────────────────────────────────── */
       :root {
-        --bg:        #0d0d0d;
+        --bg: #0d0d0d;
         --bg-raised: #161616;
-        --border:    #2a2a2a;
-        --text:      #e0e0e0;
-        --text-muted:#888;
-        --accent:    #a06cb0;   /* purple from the stage lighting */
-        --white:     #ffffff;
+        --border: #2a2a2a;
+        --text: #e0e0e0;
+        --text-muted: #888;
+        --accent: #a06cb0; /* purple from the stage lighting */
+        --white: #ffffff;
       }
 
       /* ── Reset / base ──────────────────────────────────────── */
-      body, h1, h2, h3, h4, h5, h6 {
+      body,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         font-family: 'Lato', sans-serif;
       }
 
-      body, html {
+      body,
+      html {
         height: 100%;
         background: var(--bg);
         color: var(--text);
@@ -154,7 +161,9 @@
       }
 
       /* ── Parallax images ─────────────────────────────────────── */
-      .bgimg-1, .bgimg-2, .bgimg-3 {
+      .bgimg-1,
+      .bgimg-2,
+      .bgimg-3 {
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -173,7 +182,7 @@
       }
 
       .bgimg-3 {
-        background-image: url('img/grey_skies_full_min.jpg');
+        background-image: url('img/TTC-Band-2026-01-profile.jpg');
         min-height: 400px;
       }
 
@@ -182,7 +191,7 @@
       .bgimg-3 .w3-display-middle span {
         color: var(--white);
         letter-spacing: 10px;
-        text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
       }
 
       /* ── Teaser grid ─────────────────────────────────────────── */
@@ -236,7 +245,9 @@
         color: var(--accent);
         letter-spacing: 2px;
         text-transform: uppercase;
-        transition: letter-spacing 0.2s ease, color 0.2s ease;
+        transition:
+          letter-spacing 0.2s ease,
+          color 0.2s ease;
       }
 
       .teaser-card:hover .teaser-arrow {
@@ -255,10 +266,12 @@
 
       /* ── Hero social icons ───────────────────────────────────── */
       .hero-icon {
-        color: rgba(255,255,255,0.7);
+        color: rgba(255, 255, 255, 0.7);
         font-size: 1.6rem;
         margin: 0 10px;
-        transition: color 0.2s ease, transform 0.2s ease;
+        transition:
+          color 0.2s ease,
+          transform 0.2s ease;
         display: inline-block;
       }
 
@@ -300,8 +313,12 @@
 
       .responsive-iframe {
         position: absolute;
-        top: 0; left: 0; bottom: 0; right: 0;
-        width: 100%; height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
       }
 
       /* ── Member cards ────────────────────────────────────────── */
@@ -325,7 +342,9 @@
         object-fit: cover;
         object-position: top center;
         display: block;
-        transition: transform 0.4s ease, filter 0.4s ease;
+        transition:
+          transform 0.4s ease,
+          filter 0.4s ease;
         filter: grayscale(20%);
       }
 
@@ -340,7 +359,11 @@
         left: 0;
         right: 0;
         padding: 32px 16px 16px;
-        background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.85) 0%,
+          transparent 100%
+        );
         color: var(--white);
         text-align: left;
       }
@@ -363,10 +386,14 @@
       }
 
       @media (max-width: 768px) {
-        .member-grid { grid-template-columns: repeat(2, 1fr); }
+        .member-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
       @media (max-width: 480px) {
-        .member-grid { grid-template-columns: repeat(1, 1fr); }
+        .member-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
       }
 
       /* ── Contact section ────────────────────────────────────────── */
@@ -423,12 +450,18 @@
       }
 
       /* ── Misc W3 overrides ───────────────────────────────────── */
-      .w3-wide { letter-spacing: 10px; }
-      .w3-hover-opacity { cursor: pointer; }
+      .w3-wide {
+        letter-spacing: 10px;
+      }
+      .w3-hover-opacity {
+        cursor: pointer;
+      }
 
       /* Turn off parallax on mobile */
       @media only screen and (max-device-width: 600px) {
-        .bgimg-1, .bgimg-2, .bgimg-3 {
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
           background-attachment: scroll;
           min-height: 400px;
         }
@@ -468,7 +501,10 @@
         <a href="videos.html" class="w3-bar-item w3-button w3-hide-small"
           ><i class="fa fa-video"></i> VIDEOS</a
         >
-        <a href="https://turnthecourse.bigcartel.com/" class="w3-bar-item w3-button w3-hide-small" target="_blank"
+        <a
+          href="https://turnthecourse.bigcartel.com/"
+          class="w3-bar-item w3-button w3-hide-small"
+          target="_blank"
           ><i class="fa fa-tshirt"></i> MERCH</a
         >
         <a href="#contact" class="w3-bar-item w3-button w3-hide-small"
@@ -566,22 +602,46 @@
         </div-->
       <!-- Social & streaming icons overlaid at the bottom of the hero -->
       <div class="w3-display-bottommiddle w3-padding-32">
-        <a class="hero-icon" href="https://www.facebook.com/turnthecourse" target="_blank">
+        <a
+          class="hero-icon"
+          href="https://www.facebook.com/turnthecourse"
+          target="_blank"
+        >
           <i class="fab fa-facebook" aria-hidden="true"></i>
         </a>
-        <a class="hero-icon" href="https://www.instagram.com/turnthecourse" target="_blank">
+        <a
+          class="hero-icon"
+          href="https://www.instagram.com/turnthecourse"
+          target="_blank"
+        >
           <i class="fab fa-instagram" aria-hidden="true"></i>
         </a>
-        <a class="hero-icon" href="https://www.youtube.com/channel/UCLvpX2XACxYFVTttEevyYqg" target="_blank">
+        <a
+          class="hero-icon"
+          href="https://www.youtube.com/channel/UCLvpX2XACxYFVTttEevyYqg"
+          target="_blank"
+        >
           <i class="fab fa-youtube" aria-hidden="true"></i>
         </a>
-        <a class="hero-icon" href="https://www.tiktok.com/@turnthecourse" target="_blank">
+        <a
+          class="hero-icon"
+          href="https://www.tiktok.com/@turnthecourse"
+          target="_blank"
+        >
           <i class="fab fa-tiktok" aria-hidden="true"></i>
         </a>
-        <a class="hero-icon" href="https://open.spotify.com/artist/4VgNJfOR0uNNQFQtrJ0ZFm" target="_blank">
+        <a
+          class="hero-icon"
+          href="https://open.spotify.com/artist/4VgNJfOR0uNNQFQtrJ0ZFm"
+          target="_blank"
+        >
           <i class="fab fa-spotify" aria-hidden="true"></i>
         </a>
-        <a class="hero-icon" href="https://music.apple.com/de/artist/turn-the-course/1369471894" target="_blank">
+        <a
+          class="hero-icon"
+          href="https://music.apple.com/de/artist/turn-the-course/1369471894"
+          target="_blank"
+        >
           <i class="fab fa-itunes" aria-hidden="true"></i>
         </a>
       </div>
@@ -589,23 +649,27 @@
 
     <!-- Three category teasers -->
     <div class="teaser-wrap">
-    <div class="teaser-grid">
-      <a href="https://turnthecourse.bigcartel.com/" class="teaser-card" target="_blank">
-        <div class="teaser-label">MERCH</div>
-        <div class="teaser-sub">Visit our store</div>
-        <div class="teaser-arrow">explore more</div>
-      </a>
-      <a href="#about" class="teaser-card">
-        <div class="teaser-label">ABOUT US</div>
-        <div class="teaser-sub">Who is Turn The Course?</div>
-        <div class="teaser-arrow">explore more</div>
-      </a>
-      <a href="#portfolio" class="teaser-card">
-        <div class="teaser-label">MUSIC</div>
-        <div class="teaser-sub">Stream our music</div>
-        <div class="teaser-arrow">explore more</div>
-      </a>
-    </div>
+      <div class="teaser-grid">
+        <a
+          href="https://turnthecourse.bigcartel.com/"
+          class="teaser-card"
+          target="_blank"
+        >
+          <div class="teaser-label">MERCH</div>
+          <div class="teaser-sub">Visit our store</div>
+          <div class="teaser-arrow">explore more</div>
+        </a>
+        <a href="#about" class="teaser-card">
+          <div class="teaser-label">ABOUT US</div>
+          <div class="teaser-sub">Who is Turn The Course?</div>
+          <div class="teaser-arrow">explore more</div>
+        </a>
+        <a href="#portfolio" class="teaser-card">
+          <div class="teaser-label">MUSIC</div>
+          <div class="teaser-sub">Stream our music</div>
+          <div class="teaser-arrow">explore more</div>
+        </a>
+      </div>
     </div>
 
     <!-- Latest Release video -->
@@ -683,9 +747,7 @@
       </section>
 
       <div class="w3-center" style="margin-top: 48px">
-        <a
-          href="videos.html"
-          class="w3-button w3-padding-large w3-light-grey"
+        <a href="videos.html" class="w3-button w3-padding-large w3-light-grey"
           >SEE ALL VIDEOS</a
         >
       </div>
@@ -792,12 +854,16 @@
       <div class="contact-col">
         <h1 class="contact-heading">Contact</h1>
         <p class="contact-label">Feel free to get in touch with us</p>
-        <a class="contact-link" href="mailto:turnthecourse@hotmail.com">turnthecourse@hotmail.com</a>
+        <a class="contact-link" href="mailto:turnthecourse@hotmail.com"
+          >turnthecourse@hotmail.com</a
+        >
       </div>
       <div class="contact-col">
         <h1 class="contact-heading">Booking</h1>
         <p class="contact-label">You are welcome to make a booking request</p>
-        <a class="contact-link" href="mailto:turnthecourse@hotmail.com">turnthecourse@hotmail.com</a>
+        <a class="contact-link" href="mailto:turnthecourse@hotmail.com"
+          >turnthecourse@hotmail.com</a
+        >
       </div>
     </div>
 

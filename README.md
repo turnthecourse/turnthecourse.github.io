@@ -6,7 +6,7 @@ Website for the band **Turn The Course**, hosted via GitHub Pages at [turnthecou
 
 No build step required. Serve the static files with Python's built-in HTTP server:
 
-```turnthecourse.github.io/README.md
+```sh
 python3 -m http.server 8080
 ```
 

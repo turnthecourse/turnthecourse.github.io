@@ -12,17 +12,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   fetch('partials/navbar.html')
-    .then(function (res) { return res.text() })
+    .then(function (res) {
+      if (!res.ok) throw new Error('navbar partial returned ' + res.status)
+      return res.text()
+    })
     .then(function (html) {
       document.getElementById('navbar-placeholder').innerHTML = html
       navbarDone = true
       onPartialsReady()
     })
+    .catch(function (err) {
+      console.error('Could not load navbar:', err)
+      navbarDone = true
+      onPartialsReady()
+    })
 
   fetch('partials/footer.html')
-    .then(function (res) { return res.text() })
+    .then(function (res) {
+      if (!res.ok) throw new Error('footer partial returned ' + res.status)
+      return res.text()
+    })
     .then(function (html) {
       document.getElementById('footer-placeholder').innerHTML = html
+      footerDone = true
+      onPartialsReady()
+    })
+    .catch(function (err) {
+      console.error('Could not load footer:', err)
       footerDone = true
       onPartialsReady()
     })

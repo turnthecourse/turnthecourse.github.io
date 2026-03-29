@@ -91,7 +91,9 @@ function buildUpcomingRow(ev) {
     })
   } else {
     // Show RSVP / Notify Me via Bandsintown
-    var rsvpUrl = ev.url + '&trigger=rsvp_going'
+    var rsvpUrlObj = new URL(ev.url)
+    rsvpUrlObj.searchParams.set('trigger', 'rsvp_going')
+    var rsvpUrl = rsvpUrlObj.toString()
     var a = document.createElement('a')
     a.href = rsvpUrl
     a.target = '_blank'
@@ -134,6 +136,8 @@ function renderUpcoming(events) {
   var table = document.getElementById('bit-upcoming-table')
   var tbody = document.getElementById('bit-upcoming-body')
 
+  if (!loading || !none || !table || !tbody) return
+
   loading.style.display = 'none'
 
   if (!events || events.length === 0) {
@@ -159,6 +163,8 @@ function renderPast(events) {
   var table = document.getElementById('bit-past-table')
   var tbody = document.getElementById('bit-past-body')
 
+  if (!loading || !none || !table || !tbody) return
+
   loading.style.display = 'none'
 
   if (!events || events.length === 0) {
@@ -179,8 +185,11 @@ function renderPast(events) {
 }
 
 function showError(section) {
-  document.getElementById('bit-' + section + '-loading').style.display = 'none'
-  document.getElementById('bit-' + section + '-error').style.display = 'block'
+  var loading = document.getElementById('bit-' + section + '-loading')
+  var error = document.getElementById('bit-' + section + '-error')
+  if (!loading || !error) return
+  loading.style.display = 'none'
+  error.style.display = 'block'
 }
 
 // ── Fetch from Bandsintown ─────────────────────────────────────────────────

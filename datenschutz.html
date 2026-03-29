@@ -2,16 +2,16 @@
 <html lang="en">
     <head>
         <title>Turn The Course</title>
-    
+
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
         <!-- External styles and fonts -->
         <link rel="stylesheet" href="css/w3.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    
+
         <!-- Include the different favicon types -->
         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -40,7 +40,7 @@
         <a href="videos.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-video"></i> VIDEOS</a>
         <a href="https://turnthecourse.bigcartel.com/" class="w3-bar-item w3-button w3-hide-small" target="_blank"><i class="fa fa-tshirt"></i> STORE</a>
         <a href="index.html#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-        <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-shuttle-van"></i> TOUR</a>
+        <a href="tour.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-shuttle-van"></i> TOUR</a>
         <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
       </div>
 
@@ -50,7 +50,7 @@
         <a href="videos.html" class="w3-bar-item w3-button" onclick="toggleFunction()">VIDEOS</a>
         <a href="https://turnthecourse.bigcartel.com/" class="w3-bar-item w3-button" onclick="toggleFunction()" target="_blank">STORE</a>
         <a href="index.html#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-        <a href="index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">TOUR</a>
+        <a href="tour.html" class="w3-bar-item w3-button" onclick="toggleFunction()">TOUR</a>
         <a href="index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
       </div>
     </div>
@@ -130,36 +130,7 @@
         <a href="datenschutz.html">Privacy Policy</a>
       </div>
     </footer>
-    
-    <script>
-        // Modal Image Gallery
-        function onClick(element) {
-        document.getElementById("img01").src = element.src;
-        document.getElementById("modal01").style.display = "block";
-        var captionText = document.getElementById("caption");
-        captionText.innerHTML = element.alt;
-        }
-        
-        // Change style of navbar on scroll
-        window.onscroll = function() {myFunction()};
-        function myFunction() {
-            var navbar = document.getElementById("myNavbar");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-            } else {
-                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-            }
-        }
-        
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function toggleFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
-        </script>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

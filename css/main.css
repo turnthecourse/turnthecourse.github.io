@@ -587,6 +587,179 @@ body.about-bg {
   }
 }
 
+/* ── Bandsintown events table ───────────────────────────── */
+
+.bit-loading,
+.bit-no-shows,
+.bit-error {
+  font-family: 'Horizon', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  padding: 24px 0;
+}
+
+.bit-error {
+  color: #c0504d;
+}
+
+.bit-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  table-layout: auto;
+}
+
+.bit-table thead tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.bit-table thead th {
+  font-family: 'Horizon', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 10px 16px 10px 0;
+  text-align: left;
+  font-weight: normal;
+}
+
+.bit-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s ease;
+}
+
+.bit-table tbody tr:hover {
+  background: var(--bg-raised);
+}
+
+.bit-table td {
+  padding: 18px 16px 18px 0;
+  vertical-align: middle;
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Date column */
+.bit-col-date {
+  white-space: nowrap;
+  min-width: 110px;
+}
+
+.bit-date-day {
+  display: block;
+  font-family: 'Horizon', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+.bit-date-time {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Venue column */
+.bit-col-venue {
+  font-weight: 600;
+  color: var(--white);
+  min-width: 140px;
+}
+
+/* Location column */
+.bit-col-location {
+  color: var(--text-muted);
+  min-width: 120px;
+}
+
+/* Description column */
+.bit-col-desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+/* Actions column */
+.bit-col-actions {
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 0;
+}
+
+/* CTA buttons */
+.bit-btn {
+  display: inline-block;
+  font-family: 'Horizon', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1px solid var(--border);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.bit-btn--tickets {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.bit-btn--tickets:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+.bit-btn--rsvp {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.bit-btn--rsvp:hover {
+  background: var(--bg-raised);
+  color: var(--white);
+  border-color: var(--text-muted);
+}
+
+/* Past shows: slightly dimmer */
+.bit-table--past tbody tr {
+  opacity: 0.65;
+}
+
+.bit-table--past tbody tr:hover {
+  opacity: 1;
+}
+
+/* Responsive: collapse less important columns on small screens */
+@media (max-width: 640px) {
+  .bit-col-desc {
+    display: none;
+  }
+
+  .bit-col-location {
+    display: none;
+  }
+
+  .bit-table td,
+  .bit-table th {
+    padding: 14px 10px 14px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .bit-col-actions {
+    display: none;
+  }
+}
+
 /* ── Misc W3 overrides ───────────────────────────────────── */
 .w3-wide {
   letter-spacing: 10px;

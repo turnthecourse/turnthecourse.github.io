@@ -1,13 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Turn The Course</title>
+    <title>Turn The Course - Tour</title>
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- External styles and fonts -->
     <link rel="stylesheet" href="css/w3.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link
@@ -17,7 +16,6 @@
       crossorigin="anonymous"
     />
 
-    <!-- Include the different favicon types -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -47,165 +45,80 @@
 
   <body>
     <div id="navbar-placeholder"></div>
-    <!-- Second Parallax Image with Portfolio Text -->
+
+    <!-- Hero banner -->
     <div class="bgimg-2 w3-display-container" id="home">
       <div class="w3-display-middle">
-        <!--span class="w3-xxxlarge w3-text-white w3-wide">TURN THE COURSE</span-->
         <img
           src="img/TTC_Logo_white.png"
-          class="w3-center w3-padding-large w3-animate-opacity w3-hide-small w3-hide-medium"
-          style="width: 100%"
-        />
-        <img
-          src="img/TTC_Logo_white.png"
-          class="w3-center w3-padding-large w3-animate-opacity w3-hide-small w3-hide-large"
-          style="width: 100%"
-        />
-        <img
-          src="img/TTC_Logo_white.png"
-          class="w3-center w3-padding-large w3-animate-opacity w3-hide-medium w3-hide-large"
+          class="w3-center w3-padding-large w3-animate-opacity"
           style="width: 100%"
         />
       </div>
     </div>
 
+    <!-- Tour content -->
     <div class="page-bg">
       <div class="w3-content w3-container w3-padding-64">
-        <section class="Tour">
+        <!-- Upcoming shows -->
+        <section id="tour-upcoming">
           <h1>UPCOMING SHOWS</h1>
+          <div id="bit-upcoming-loading" class="bit-loading">
+            <i class="fas fa-circle-notch fa-spin"></i> Loading shows...
+          </div>
+          <div
+            id="bit-upcoming-none"
+            class="bit-no-shows"
+            style="display: none"
+          >
+            No upcoming shows at the moment. Check back soon!
+          </div>
+          <div id="bit-upcoming-error" class="bit-error" style="display: none">
+            Could not load shows. Please try again later.
+          </div>
+          <table
+            class="bit-table"
+            id="bit-upcoming-table"
+            style="display: none"
+          >
+            <thead>
+              <tr>
+                <th class="bit-col-date">Date</th>
+                <th class="bit-col-venue">Name</th>
+                <th class="bit-col-location">City</th>
+                <th class="bit-col-actions"></th>
+              </tr>
+            </thead>
+            <tbody id="bit-upcoming-body"></tbody>
+          </table>
+        </section>
 
-          Save the date!
-          <hr />
-          <p>15.05.2026 - Schweinfurt / Bunny Cow Festival</p>
-
+        <!-- Past shows -->
+        <section id="tour-past" style="margin-top: 64px">
           <h1>PAST SHOWS</h1>
-
-          Have you been with us?
-          <hr />
-          <p>
-            27.09.2025 - München, Backstage Club / TSS Support (End of Time
-            Tour)
-          </p>
-          <p>22.03.2025 - Erding, Sonic / Cold Agony Tour</p>
-          <p>08.03.2025 - Dingolfing, Jugendzentrum / Heartcore Fest</p>
-          <p>07.03.2025 - Fürth, Kopf und Kragen / Cold Agony Tour</p>
-          <p>22.02.2025 - Würzburg, B-Hof / Cold Agony Tour</p>
-          <p>31.01.2025 - Hamburg, Markthalle/Marx / Cold Agony Tour</p>
-          <hr />
-          <p>14.12.2024 - (AT) Salzburg, Mark / Cold Agony Tour</p>
-          <p>30.11.2024 - (NL) Geleen, Café De Meister / Cold Agony Tour</p>
-          <p>
-            23.11.2024 - Schweinfurt, Stattbahnhof / Fall Core Fest 2024 / 10
-            Year Anniversary
-          </p>
-          <p>09.11.2024 - Amberg, JuZe Klärwerk / Cold Agony Tour</p>
-          <p>18.10.2024 - Bremen, Lila Eule / Cold Agony Tour</p>
-          <p>05.10.2024 - Mörfelden, JuKuz / Cold Agony Tour</p>
-          <p>14.09.2024 - Mühlhausen, Sportplatz / Drunk In Public Open Air</p>
-          <p>01.06.2024 - Burg Scharfenstein / Loolalapampa 5 Open Air</p>
-          <p>11.05.2024 - Schweinfurt, Stattbahnhof / Ratfeast 2024</p>
-          <hr />
-          <p>
-            18.11.2023 - Limbach-Oberfrohna, Stadthalle / Grimeville Festival
-          </p>
-          <p>20.10.2023 - Schweinfurt, Stattbahnhof / Einhörner VS. Dinos</p>
-          <p>24.06.2023 - Günzburg / Guntiafest</p>
-          <p>27.05.2023 - Schweinfurt, Stattbahnhof / Gschrei Im Mai</p>
-          <p>15.04.2023 - Würzburg, B-Hof / I Felt You Here Tour</p>
-          <p>01.04.2023 - Hildburghausen, Lange Heide / I Felt You Here Tour</p>
-          <p>
-            11.02.2023 - Koblenz, Haus der offnen Tür / I Felt You Here Tour
-          </p>
-          <p>28.01.2023 - Schweinfurt, Stattbahnhof / Fall Core Fest 6</p>
-          <hr />
-          <p>03.12.2022 - Freiberg, Train Control / I Felt You Here Tour</p>
-          <p>02.12.2022 - Ziwckau, Battlezone / I Felt You Here Tour</p>
-          <p>19.11.2022 - Bodenmais, Rote Res / I Felt You Here Tour</p>
-          <p>04.11.2022 - Amberg, Juze Klärwerk / I Felt You Here Tour</p>
-          <p>02.10.2022 - Nürnberg, Luise / I Felt You Here Tour</p>
-          <hr />
-          <p>
-            15.11.2021 - Schweinfurt, Fränz Jugendhaus / All Star Core Night
-          </p>
-          <p>15.10.2021 - Hammelburg, Wasserhaus / Rock Check</p>
-          <hr />
-          <p>15.02.2020 - Fürth, Kopf Und Kragen / Lost In Winter Tour</p>
-          <p>07.02.2020 - Schweinfurt, Stattbahnhof / Fall Core Fest 5</p>
-          <p>24.01.2020 - Ansbach, Café Prinzregent / Lost In Winter Tour</p>
-          <p>18.01.2020 - Augsburg, Ballonfabrik / Lost In Winter Tour</p>
-          <hr />
-          <p>14.12.2019 - Bamberg, Live Club / Lost In Winter Tour</p>
-          <p>07.12.2019 - Lauf a. d. Pegnitz, JUZ / Lost In Winter Tour</p>
-          <p>29.30.2019 - Dresden, Novitatis / Lost In Winter Tour</p>
-          <p>29.30.2019 - Cottbus, Muggefug / Lost In Winter Tour</p>
-          <p>
-            06.07.2019 - Obervolkach, Sportplatz / Birthday Moshpit Festival
-          </p>
-          <p>21.06.2019 - Würzburg, Mainwiese / Umsont & Draußen Festival</p>
-          <p>
-            08.03.2019 - Bamberg, Haas Säle / Krach Am Bach Festival Contest
-          </p>
-          <p>
-            19.01.2019 - Gerolzhofen, Steigerwald Pub / Put Your Dannys Down
-          </p>
-          <hr />
-          <p>22.12.2018 - Dillenburg, Industriehalle / Secret Show</p>
-          <p>01.12.2018 - Schweinfurt, Stattbahnhof / Fall Core Fest 4</p>
-          <p>17.11.2018 - Zeil Am Main, Rudolf-Winkler-Haus / Rock Check</p>
-          <p>29.09.2018 - Bad Mergentheim, JuHa Marabu / Marabu Metal Night</p>
-          <p>05.05.2018 - Würzburg, B-Hof / Rotten Tour</p>
-          <p>27.04.2018 - Limburg a. d. Lahn, Irish Pub / Rotten Tour</p>
-          <p>21.04.2018 - Ansbach Prinzregent / Rotten Tour</p>
-          <p>14.04.2018 - Kitzingen, Main Jugencafé / Rotten Tour</p>
-          <p>06.04.2018 - Dreieich, Live Werkstatt / Rotten Tour</p>
-          <hr />
-          <p>12.12.2017 - Passau, cLab / Rotten Tour</p>
-          <p>15.11.2017 - Fulda, Café Chaos / Rotten Tour</p>
-          <p>11.11.2017 - Schweinfurt, Stattbahnhof / Fall Core Fest 3</p>
-          <p>27.10.2017 - Erlagen, Omega / Rotten Tour w. Scheppercore</p>
-          <p>21.10.2017 - Landau (Pfalz), Rhumbar / Rotten Tour</p>
-          <p>07.10.2017 - Fürth, Kopf Und Kragen / Rotten Tour</p>
-          <p>05.10.2017 - München, Sunny Red / Rotten Tour</p>
-          <p>30.09.2017 - Bad Neustadt (Saale), JuZe / Rotten Tour</p>
-          <p>16.09.2017 - Würzburg, B-Hof / Rotten Tour</p>
-          <p>15.09.2017 - Lohr Am Main, Juze / Rotten Tour</p>
-          <p>08.09.2017 - Schweinfurt, Stattbahnhof / Rotten Tour</p>
-          <p>
-            24.02.2017 - Schweinfurt, Stattbahnhof / w. Walking Dead On Broadway
-          </p>
-          <hr />
-          <p>12.11.2016 - Schweinfurt, Stattbahnhof / Fall Core Fest 2</p>
-          <p>30.09.2016 - Würzburg, Cairo / No One Can Save Us Tour</p>
-          <p>
-            24.09.2016 - Schweinfurt, Fränz Jugendhaus / No One Can Save Us Tour
-          </p>
-          <p>
-            09.09.2016 - Bad Neutstadt (Saale), JuZe / No One Can Save Us Tour
-          </p>
-          <p>03.09.2016 - Krumbach, Jugendzentrum / No One Can Save Us Tour</p>
-          <p>
-            02.09.2016 - Kleinwenkheim, Bonebreaker Festival / No One Can Save
-            Us Tour
-          </p>
-          <p>22.07.2016 - Fürth, Kopf Und Kragen / No One Can Save Us Tour</p>
-          <p>14.05.2016 - Schweinfurt, Stattbahnhof / Gschrei Im Mai 3</p>
-          <hr />
-          <p>19.12.2015 - Schweinfurt, Fränz Jugendhaus / Homecoming Bash</p>
-          <p>05.12.2015 - Bad Neustadt (Saale), JuZe / Rock Check</p>
-          <p>14.11.2015 - Schweinfurt, Stattbahnhof / Fall Core Fest 1</p>
-          <p>
-            12.09.2015 - Schweinfurt, Stattbahnhof / Rockverband Schweinfurt
-            e.V. Sommerfest
-          </p>
-          <p>25.04.2015 - Schweinfurt, Stattbahnhof / First Act Night</p>
-          <p>
-            14.04.2015 - Schweinfurt, Fränz Jugendhaus / 3 Days of Destruction
-            Tour
-          </p>
-          <p>
-            21.03.2015 - Schweinfurt, Fränz Jugendhaus / Metal Franconia
-            Festival Warm Up
-          </p>
+          <div id="bit-past-loading" class="bit-loading">
+            <i class="fas fa-circle-notch fa-spin"></i> Loading shows...
+          </div>
+          <div id="bit-past-none" class="bit-no-shows" style="display: none">
+            No past shows recorded yet.
+          </div>
+          <div id="bit-past-error" class="bit-error" style="display: none">
+            Could not load shows. Please try again later.
+          </div>
+          <table
+            class="bit-table bit-table--past"
+            id="bit-past-table"
+            style="display: none"
+          >
+            <thead>
+              <tr>
+                <th class="bit-col-date">Date</th>
+                <th class="bit-col-venue">Name</th>
+                <th class="bit-col-location">City</th>
+              </tr>
+            </thead>
+            <tbody id="bit-past-body"></tbody>
+          </table>
         </section>
       </div>
     </div>
@@ -213,5 +126,6 @@
     <div id="footer-placeholder"></div>
 
     <script src="js/main.js"></script>
+    <script src="js/tour.js"></script>
   </body>
 </html>

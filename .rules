@@ -1,0 +1,214 @@
+# Turn The Course — Project Rules
+
+## Project Overview
+
+Static website for **Turn The Course**, a post-metalcore band from Schweinfurt, Bavaria, Germany.
+Hosted via GitHub Pages at [turnthecourse.com](https://turnthecourse.com).
+
+No build step, no bundler, no framework — pure HTML, CSS, and vanilla JavaScript.
+
+---
+
+## Pages
+
+| File               | Purpose                                          |
+|--------------------|--------------------------------------------------|
+| `index.html`       | Main landing page (home, music, about, contact)  |
+| `tour.html`        | Upcoming and past shows                          |
+| `videos.html`      | Video gallery                                    |
+| `impressum.html`   | Legal imprint (German law requirement)           |
+| `datenschutz.html` | Privacy policy (German GDPR requirement)         |
+
+---
+
+## Tech Stack
+
+- **CSS framework:** W3.CSS (local copy at `css/w3.css` — do not modify)
+- **Custom styles:** `css/main.css` — all project-specific styles live here
+- **Icons:** Font Awesome 5.15.3 (CDN, `fab` / `fa` prefix classes)
+- **Custom fonts:** `Horizon` (regular + outlined italic), loaded via `@font-face` from `fonts/`
+- **Body font:** Lato (system/CDN fallback)
+- **JavaScript:** Vanilla, single shared file at `js/main.js`, loaded via `<script src="js/main.js"></script>` at the bottom of each HTML file
+- **Partials:** Navbar and footer live in `partials/navbar.html` and `partials/footer.html`, fetched and injected at runtime by `js/main.js`
+
+---
+
+## Shared Partials
+
+The navbar and footer are defined once and injected into every page via JavaScript fetch:
+
+- `partials/navbar.html` — the full `<div class="w3-top">…</div>` navbar markup
+- `partials/footer.html` — the full `<footer>…</footer>` markup
+
+Each HTML page has two placeholder divs that get populated at load time:
+
+```/dev/null/example.html#L1-2
+<div id="navbar-placeholder"></div>
+<div id="footer-placeholder"></div>
+```
+
+**Rules:**
+- All navbar and footer changes must be made in the partials — never in the individual HTML files
+- Links in `partials/navbar.html` use `index.html#section` style hrefs so they work correctly from any page
+- The `window.onscroll` handler in `js/main.js` is bound only after the navbar partial has been injected, to avoid a race condition
+
+---
+
+## Styling Conventions
+
+### CSS Custom Properties (Design Tokens)
+All colours are defined as CSS variables in `:root` inside `css/main.css`:
+
+```css/main.css#L23-31
+:root {
+  --bg: #0d0d0d;
+  --bg-raised: #161616;
+  --border: #2a2a2a;
+  --text: #e0e0e0;
+  --text-muted: #888;
+  --accent: #a06cb0;
+  --white: #ffffff;
+}
+```
+
+Always use these tokens — never hardcode colour values.
+
+### Typography
+- Headings (`h1`–`h6`): `Horizon` font, uppercase, letter-spacing
+- Body text: `Lato`, `var(--text)`
+- `h3`: white, `letter-spacing: 3px`, `text-transform: uppercase`
+- `h5`: `var(--text-muted)`, `letter-spacing: 2px`, `text-transform: uppercase`
+
+### Layout Patterns
+- Page sections use `w3-content w3-container w3-padding-64` for centred, padded containers
+- Full-bleed parallax backgrounds use `.bgimg-1`, `.bgimg-2`, `.bgimg-3`
+- Full-bleed overlay sections on `index.html` use `.about-bg` or `.latest-bg` (fixed background image + dark gradient overlay via `::before`) — safe to use on interior content divs
+- **Sub-page content background:** use `.page-bg` to wrap content sections on sub-pages (`tour.html`, `videos.html`, `impressum.html`, `datenschutz.html`). It provides the same parallax background + dark overlay as `.about-bg` but is explicitly designed for use on a `<div>`, never on `<body>`
+- Responsive grid components: `.teaser-grid`, `.member-grid`, `.contact-section` — all collapse to single column on mobile
+
+### Responsive Breakpoints
+- `max-width: 600px` — mobile
+- `max-width: 768px` — tablet
+- W3.CSS responsive utilities: `w3-hide-small`, `w3-hide-medium`, `w3-hide-large`
+- Parallax (`background-attachment: fixed`) is disabled on mobile (`max-width: 600px`)
+
+---
+
+## HTML Conventions
+
+- `<!doctype html>` lowercase, on all pages
+- `<html lang="en">` on all pages
+- All pages share the same `<head>` boilerplate: charset, viewport, `css/w3.css`, `css/main.css`, Font Awesome CDN, and favicon set from `favicon/`
+- **Never put any class on `<body>`** — classes that use `position: relative` on `body` create a CSS stacking context that traps `position: fixed` elements (like the navbar) and breaks them. Keep `<body>` plain always
+- All `<body>` tags are plain `<body>` with no classes
+- For sub-page content backgrounds, wrap the content `<div>` in `<div class="page-bg">` — never apply background classes to `<body>`
+- Navbar and footer are **not** duplicated in HTML files — they are injected via `partials/`
+- Inline `style=""` attributes are acceptable for one-off layout tweaks (e.g. `style="margin-top: 48px"`)
+- HTML is formatted with 2-space indentation, attributes on new lines for long tags
+
+---
+
+## JavaScript Conventions
+
+- Vanilla JS only — no libraries or frameworks
+- All shared logic lives in `js/main.js`, loaded via `<script src="js/main.js"></script>` just before `</body>` in every page
+- `js/main.js` handles:
+  - Fetching and injecting `partials/navbar.html` and `partials/footer.html` on `DOMContentLoaded`
+  - Binding `window.onscroll` only after the navbar partial is injected
+  - `onClick(element)` — modal image gallery
+  - `myFunction()` — navbar style change on scroll
+  - `toggleFunction()` — mobile hamburger menu toggle
+- Use single quotes for strings (matches Prettier config)
+- No semicolons (matches Prettier config)
+
+---
+
+## Prettier Config (`.prettierrc`)
+
+```json/.prettierrc#L1-7
+{
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "prettier.printWidth": 120
+}
+```
+
+Apply these rules to all HTML, CSS, and JS edits.
+
+---
+
+## Assets
+
+### Images (`img/`)
+- Band photos: `TTC-Felix.jpg`, `TTC-Joshua.jpg`, `TTC-Noah.jpg`, `TTC-Sven.jpg`
+- Band group shots: `TTC-Band-2026-01-profile.jpg`, `TTC-Band-2026-02-wide.jpg`, `TTC-Band-2026-03-compact.jpg`
+- Logos: `TTC_Logo_white.png` (on dark), `TTC_Logo_black.png` (on light)
+- Background images: `Website-BG-1.jpg`, `Website-BG-2.jpg`
+- Streaming logos: `spotify.png`, `spotify-blk.png`, `apple-music.png`, `apple-music-blk.png`, `deezer.png`, `deezer-blk.png`, `youtube.png`, `Tidal_(service)_logo.svg`
+- Release artwork: `grey_skies_full_min.jpg`, `i-felt-you-here-min.jpg`
+
+### Fonts (`fonts/`)
+- `Horizon.woff2` / `Horizon.otf` — regular weight
+- `Horizon_Outlined.woff2` / `Horizon_Outlined.otf` — mapped to `font-style: italic`
+
+### Favicons (`favicon/`)
+Full multi-platform favicon set. Reference via `favicon/` prefix — do not move or rename.
+
+---
+
+## Band Info
+
+- **Genre:** Post-Metalcore (cinematic, heavy, emotionally resonant)
+- **Origin:** Schweinfurt, Bavaria, Germany — founded 2014
+- **Members:** Felix Scheider (Vocals), Joshua Simon (Guitars & Synths), Noah Ries (Drums), Sven Nekula (Bass)
+- **Discography:** *No One Can Save Us* EP (2018), *Grey Skies* EP (2020), *I Felt You Here* (2024), singles *Never Gone* & *Silhouette* (2025)
+- **Booking/Contact email:** turnthecourse@hotmail.com
+- **Merch store:** https://turnthecourse.bigcartel.com/
+
+### Social / Streaming Links
+- Facebook: https://www.facebook.com/turnthecourse
+- Instagram: https://www.instagram.com/turnthecourse
+- YouTube: https://www.youtube.com/channel/UCLvpX2XACxYFVTttEevyYqg
+- TikTok: https://www.tiktok.com/@turnthecourse
+- Spotify: https://open.spotify.com/artist/4VgNJfOR0uNNQFQtrJ0ZFm
+- Apple Music: https://music.apple.com/de/artist/turn-the-course/1369471894
+- Deezer: https://www.deezer.com/de/artist/14479833
+- Tidal: https://tidal.com/browse/artist/9712964
+
+---
+
+## Running Locally
+
+No build step required. Serve the root directory with Python's built-in server:
+
+```sh
+python3 -m http.server 8080
+```
+
+Then open http://localhost:8080.
+
+> Note: the partial fetch calls (`partials/navbar.html`, `partials/footer.html`) require a real HTTP server. Opening HTML files directly via `file://` will not work.
+
+---
+
+## Do's and Don'ts
+
+**Do:**
+- Use CSS variables for all colours
+- Make navbar and footer changes in `partials/navbar.html` and `partials/footer.html` only
+- Add new sections following existing patterns (parallax divider → content container)
+- Use `aria-hidden="true"` on decorative Font Awesome icons
+- Compress/optimise images before adding to `img/`
+- Keep legal pages (`impressum.html`, `datenschutz.html`) in German
+- Keep all `<body>` tags plain with no classes
+
+**Don't:**
+- Edit `css/w3.css` — override W3.CSS rules in `css/main.css` instead
+- Put any class on a `<body>` tag — classes using `position: relative` on `body` break the fixed navbar by creating a CSS stacking context that traps `position: fixed` elements
+- Use `.about-bg` or any background class directly on `<body>` — use `.page-bg` on a wrapper `<div>` instead for sub-pages
+- Duplicate navbar or footer markup in individual HTML files
+- Introduce npm, build tools, or JS frameworks
+- Hardcode colour hex values outside of `css/main.css`
+- Remove or alter the Imprint / Privacy Policy footer links (legally required)

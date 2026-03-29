@@ -1,3 +1,33 @@
+// Inject shared partials then initialise scripts that depend on them
+document.addEventListener('DOMContentLoaded', function () {
+  var navbarDone = false
+  var footerDone = false
+
+  function onPartialsReady() {
+    if (!navbarDone || !footerDone) return
+    // Bind scroll handler only after navbar is in the DOM
+    window.onscroll = function () {
+      myFunction()
+    }
+  }
+
+  fetch('partials/navbar.html')
+    .then(function (res) { return res.text() })
+    .then(function (html) {
+      document.getElementById('navbar-placeholder').innerHTML = html
+      navbarDone = true
+      onPartialsReady()
+    })
+
+  fetch('partials/footer.html')
+    .then(function (res) { return res.text() })
+    .then(function (html) {
+      document.getElementById('footer-placeholder').innerHTML = html
+      footerDone = true
+      onPartialsReady()
+    })
+})
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById('img01').src = element.src
@@ -7,9 +37,6 @@ function onClick(element) {
 }
 
 // Change style of navbar on scroll
-window.onscroll = function () {
-  myFunction()
-}
 function myFunction() {
   var navbar = document.getElementById('myNavbar')
   if (

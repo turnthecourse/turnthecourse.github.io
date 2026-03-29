@@ -303,6 +303,7 @@ body.about-bg {
 }
 
 .teaser-label {
+  font-family: 'Horizon', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 4px;
@@ -312,6 +313,7 @@ body.about-bg {
 }
 
 .teaser-sub {
+  font-family: 'Horizon', sans-serif;
   font-size: 0.82rem;
   color: var(--text-muted);
   letter-spacing: 0.5px;
@@ -319,6 +321,7 @@ body.about-bg {
 }
 
 .teaser-arrow {
+  font-family: 'Horizon', sans-serif;
   font-size: 0.85rem;
   color: var(--accent);
   letter-spacing: 2px;
@@ -443,7 +446,8 @@ body.about-bg {
 }
 
 .member-card-name {
-  font-size: 1.1rem;
+  font-family: 'Horizon', sans-serif;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -452,6 +456,7 @@ body.about-bg {
 }
 
 .member-card-role {
+  font-family: 'Horizon', sans-serif;
   font-size: 0.78rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;

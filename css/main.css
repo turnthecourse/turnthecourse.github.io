@@ -1,3 +1,24 @@
+/* ── Custom fonts ───────────────────────────────────────── */
+@font-face {
+  font-family: 'Horizon';
+  src:
+    url('../fonts/Horizon.woff2') format('woff2'),
+    url('../fonts/Horizon.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Horizon';
+  src:
+    url('../fonts/Horizon_Outlined.woff2') format('woff2'),
+    url('../fonts/Horizon_Outlined.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 /* ── Colour tokens ─────────────────────────────────────── */
 :root {
   --bg: #0d0d0d;
@@ -10,14 +31,17 @@
 }
 
 /* ── Reset / base ──────────────────────────────────────── */
-body,
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Horizon', sans-serif;
 }
 
 body,
@@ -29,6 +53,10 @@ html {
 }
 
 /* ── Navbar ─────────────────────────────────────────────── */
+.w3-top {
+  z-index: 1000 !important;
+}
+
 #myNavbar {
   background: transparent !important;
   transition: background 0.3s ease;
@@ -39,6 +67,7 @@ html {
 }
 #myNavbar a {
   color: var(--text) !important;
+  font-family: 'Horizon', sans-serif;
 }
 #myNavbar a:hover {
   background: var(--bg-raised) !important;
@@ -50,6 +79,7 @@ html {
 }
 #navDemo a {
   color: var(--text) !important;
+  font-family: 'Horizon', sans-serif;
 }
 #navDemo a:hover {
   background: var(--bg-raised) !important;
@@ -73,6 +103,24 @@ footer {
   transition: color 0.2s ease;
 }
 .ttc-footer:hover {
+  color: var(--white);
+}
+
+.footer-legal {
+  margin-top: 24px;
+  font-family: 'Horizon', sans-serif;
+  letter-spacing: 2px;
+}
+
+.footer-legal a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  margin: 0 12px;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
   color: var(--white);
 }
 
@@ -218,6 +266,7 @@ body.about-bg {
 /* Parallax label text */
 .bgimg-2 .w3-display-middle span,
 .bgimg-3 .w3-display-middle span {
+  font-family: 'Horizon', sans-serif;
   color: var(--white);
   letter-spacing: 10px;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);

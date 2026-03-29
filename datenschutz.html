@@ -10,7 +10,6 @@
         <!-- External styles and fonts -->
         <link rel="stylesheet" href="css/w3.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     
         <!-- Include the different favicon types -->
@@ -25,33 +24,35 @@
 
 <body class="about-bg">
 
-    <!-- Navbar (sit on top) -->
+        <!-- Navbar (sit on top) -->
     <div class="w3-top">
-        <div class="w3-bar" id="myNavbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-                <i class="fa fa-bars"></i>
-            </a>
-            <a href="index.html#home" class="w3-bar-item w3-button">HOME</a>
-            <a href="index.html#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-            <a href="index.html#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-music"></i> MUSIC</a>
-            <a href="videos.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-video"></i> VIDEOS</a>
-            <a href="https://turnthecourse.bigcartel.com/" target="_blank" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-tshirt"></i> MERCH</a>
-            <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-            <a href="tour.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-shuttle-van"></i> TOUR</a>
-            <a href="impressum.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-info"></i> IMPRINT</a>
-            <a href="datenschutz.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-lock"></i> PRIVACY POLICY</a>
-        </div>
-            <!-- Navbar on small screens -->
-            <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-                <a href="index.html#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-                <a href="index.html#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">MUSIC</a>
-                <a href="videos.html" class="w3-bar-item w3-button" onclick="toggleFunction()">VIDEOS</a>
-                <a href="https://turnthecourse.bigcartel.com/" target="_blank" class="w3-bar-item w3-button" onclick="toggleFunction()">MERCH</a>
-                <a href="index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-                <a href="tour.html" class="w3-bar-item w3-button" onclick="toggleFunction()">TOUR</a>
-                <a href="impressum.html" class="w3-bar-item w3-button" onclick="toggleFunction()">IMPRINT</a>
-                <a href="datenschutz.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PRIVACY POLICY</a>
-            </div>
+      <div class="w3-bar" id="myNavbar">
+        <a
+          class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0);"
+          onclick="toggleFunction()"
+          title="Toggle Navigation Menu"
+        >
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="index.html#home" class="w3-bar-item w3-button">HOME</a>
+        <a href="index.html#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-music"></i> MUSIC</a>
+        <a href="videos.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-video"></i> VIDEOS</a>
+        <a href="https://turnthecourse.bigcartel.com/" class="w3-bar-item w3-button w3-hide-small" target="_blank"><i class="fa fa-tshirt"></i> STORE</a>
+        <a href="index.html#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-shuttle-van"></i> TOUR</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+      </div>
+
+      <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+        <a href="index.html#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">MUSIC</a>
+        <a href="videos.html" class="w3-bar-item w3-button" onclick="toggleFunction()">VIDEOS</a>
+        <a href="https://turnthecourse.bigcartel.com/" class="w3-bar-item w3-button" onclick="toggleFunction()" target="_blank">STORE</a>
+        <a href="index.html#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">TOUR</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+      </div>
     </div>
 
         <!-- Second Parallax Image with Portfolio Text -->
@@ -97,9 +98,10 @@
         </section>
     </div>
 
-        <!-- Footer -->
+            <!-- Footer -->
     <footer class="w3-center w3-padding-64">
-      <a href="#home" class="w3-button w3-light-grey"        ><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a
+      <a href="#home" class="w3-button w3-light-grey"
+        ><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a
       >
 
       <div class="w3-xlarge w3-section">
@@ -121,6 +123,11 @@
         <a class="ttc-footer" href="https://music.apple.com/de/artist/turn-the-course/1369471894" target="_blank">
           <i class="fab fa-itunes" aria-hidden="true"> </i>
         </a>
+      </div>
+
+      <div class="footer-legal">
+        <a href="impressum.html">Imprint</a>
+        <a href="datenschutz.html">Privacy Policy</a>
       </div>
     </footer>
     

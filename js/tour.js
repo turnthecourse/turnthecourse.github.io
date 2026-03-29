@@ -33,8 +33,7 @@ function locationText(venue) {
   var parts = []
   if (venue.city) parts.push(venue.city)
   if (venue.region) parts.push(venue.region)
-  if (venue.country && venue.country !== 'Germany')
-    parts.push('(' + venue.country + ')')
+  if (venue.country && venue.country !== 'Germany') parts.push('(' + venue.country + ')')
   return parts.join(', ')
 }
 

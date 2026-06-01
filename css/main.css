@@ -740,25 +740,60 @@ body.about-bg {
   opacity: 1;
 }
 
-/* Responsive: collapse less important columns on small screens */
+/* Responsive: switch to stacked card layout on small screens */
 @media (max-width: 640px) {
-  .bit-col-desc {
+  /* Collapse the table into block elements */
+  .bit-table,
+  .bit-table tbody,
+  .bit-table tr,
+  .bit-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Hide the column headers — context is clear from card layout */
+  .bit-table thead {
     display: none;
   }
 
-  .bit-col-location {
-    display: none;
+  /* Each row becomes a card */
+  .bit-table tbody tr {
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    padding: 14px 16px;
   }
 
-  .bit-table td,
-  .bit-table th {
-    padding: 14px 10px 14px 0;
+  .bit-table tbody tr:hover {
+    background: var(--bg-raised);
   }
-}
 
-@media (max-width: 400px) {
+  /* Cell padding reset for card layout */
+  .bit-table td {
+    padding: 3px 0;
+    border: none;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  /* All columns are visible inside the card */
+  .bit-col-desc,
+  .bit-col-location,
   .bit-col-actions {
-    display: none;
+    display: block;
+  }
+
+  /* Date gets a bit of breathing room */
+  .bit-col-date {
+    margin-bottom: 4px;
+  }
+
+  /* Ticket/RSVP button sits at the bottom of the card, left-aligned */
+  .bit-col-actions {
+    text-align: left;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
   }
 }
 
